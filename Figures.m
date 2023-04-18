@@ -348,19 +348,6 @@ load(['./' language '/TIMELINE'])
 set(gcf,'currentaxes',handles(1));
 hold all
 
-anchoizq = 0.21;
-anchoder = 0.27;
-alto = 1.25;
-rmean = 0.6;
-alphamean = 2/6.5;
-xv1 = linspace(rmean-anchoizq,rmean+anchoder,20);
-xv2 = fliplr(xv1);
-limup = rmean*2/alphamean+alto/2;
-limdown = rmean*2/alphamean-alto/2;
-yv = [limdown./xv1 limup./xv2];
-xv = [xv1 xv2];
-patch(xv,yv,'r')
-
 
 ylabel('\tau (years)','fontsize',letsize)
 xlabel('R (years^{-1})','fontsize',letsize)
@@ -412,7 +399,7 @@ set(gca,'xcolor','none','ycolor','none','color','none')
 set(h, 'AlphaData', I.alpha);
 
 set(gcf,'currentaxes',handles(2));
-I = importdata([imagedir 'FigCoordPol3.png']);
+I = importdata([imagedir 'FigCoordPol.png']);
 h = imshow(I.cdata);
 set(gca,'xcolor','none','ycolor','none','color','none')
 set(h, 'AlphaData', I.alpha);
@@ -654,22 +641,22 @@ M(2).legend = 'N/2';
 M(3).legend = 'N/4';
 M(4).legend = 'N/8';
 
-M(1).lw = 0.0699;
-M(2).lw = 0.0701;
-M(3).lw = 0.0749;
-M(4).lw = 0.0751;
+M(1).lw = 0.0675;
+M(2).lw = 0.07;
+M(3).lw = 0.075;
+M(4).lw = 0.075;
 
-M(1).ls = 0.1;
+M(1).ls = 0.1125;
 M(2).ls = 0.1175;
 M(3).ls = 0.125;
-M(4).ls = 0.13;
+M(4).ls = 0.1325;
 
-M(1).elw = 0.005;
+M(1).elw = 0.0075;
 M(2).elw = 0.005;
 M(3).elw = 0.005;
 M(4).elw = 0.005;
 
-M(1).els = 0.01;
+M(1).els = 0.0025;
 M(2).els = 0.0025;
 M(3).els = 0.0025;
 M(4).els = 0.0025;
